@@ -28,32 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            panelContenido = new Panel();
             SuspendLayout();
             // 
-            // label1
+            // panelContenido
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(190, 289);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
+            panelContenido.BackColor = Color.RosyBrown;
+            panelContenido.Location = new Point(311, 12);
+            panelContenido.Name = "panelContenido";
+            panelContenido.Size = new Size(957, 696);
+            panelContenido.TabIndex = 0;
             // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(label1);
+            BackColor = Color.PeachPuff;
+            ClientSize = new Size(1280, 720);
+            Controls.Add(panelContenido);
             Name = "FormMain";
             Text = "Gimnasio";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private Panel panelContenido;
     }
 }
