@@ -36,7 +36,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Name = "View_Persona";
-            Size = new Size(758, 465);
+            Size = new Size(957, 650);
             ResumeLayout(false);
         }
 

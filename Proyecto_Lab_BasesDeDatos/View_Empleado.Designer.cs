@@ -48,7 +48,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(label1);
             Name = "View_Empleado";
-            Size = new Size(1104, 631);
+            Size = new Size(957, 650);
             ResumeLayout(false);
             PerformLayout();
         }
