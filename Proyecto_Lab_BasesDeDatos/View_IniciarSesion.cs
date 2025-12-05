@@ -38,20 +38,26 @@ namespace Proyecto_Lab_BasesDeDatos
                 );
             }
             else
-            { 
-                FormMain main = new FormMain();
-                //Problema de FormMain minimizandose por el FindForm().Hide();
-                main.Show();
-                FindForm().Hide();
-                //
-                //  Aqui se colocan cosas de la base de datos
-                //
-                main.SetUsuario("Admin", usuario);
-                main.Show();
+            {
+                cargarPantalla(contrasenia, usuario);
             }
                 
         }
+        public async Task cargarPantalla(string contrasenia, string usuario)
+        {
+            FormMain main = new FormMain();
+            bool cargar = await main.verificarUsuario(contrasenia, usuario);
 
+            if (cargar)
+            {
+                //Problema de FormMain minimizandose por el FindForm().Hide();
+                main.Show();
+                FindForm().Hide();
+                
+                main.Show();
+            }
+            
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 

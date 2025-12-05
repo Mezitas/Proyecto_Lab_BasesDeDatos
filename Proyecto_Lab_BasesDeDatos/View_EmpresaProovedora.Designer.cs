@@ -30,7 +30,7 @@
         {
             lblTitulo = new Label();
             lblId = new Label();
-            txtId = new TextBox();
+            lblIdM = new TextBox();
             lblNombre = new Label();
             txtNombre = new TextBox();
             lblTelefono = new Label();
@@ -67,14 +67,14 @@
             lblId.TabIndex = 1;
             lblId.Text = "ID Proveedor";
             // 
-            // txtId
+            // lblIdM
             // 
-            txtId.BorderStyle = BorderStyle.FixedSingle;
-            txtId.Location = new Point(25, 80);
-            txtId.Name = "txtId";
-            txtId.ReadOnly = true;
-            txtId.Size = new Size(120, 23);
-            txtId.TabIndex = 2;
+            lblIdM.BorderStyle = BorderStyle.FixedSingle;
+            lblIdM.Location = new Point(25, 80);
+            lblIdM.Name = "lblIdM";
+            lblIdM.ReadOnly = true;
+            lblIdM.Size = new Size(120, 23);
+            lblIdM.TabIndex = 2;
             // 
             // lblNombre
             // 
@@ -221,7 +221,7 @@
             Controls.Add(lblTelefono);
             Controls.Add(txtNombre);
             Controls.Add(lblNombre);
-            Controls.Add(txtId);
+            Controls.Add(lblIdM);
             Controls.Add(lblId);
             Controls.Add(lblTitulo);
             Name = "View_EmpresaProovedora";
@@ -234,7 +234,7 @@
         #endregion
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox lblIdM;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblTelefono;

@@ -1,17 +1,88 @@
 using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
 
 namespace Proyecto_Lab_BasesDeDatos
 {
     public partial class FormMain : Form
     {
+        public int personaActualId;
         private string usuarioActual;
         private string rolActual;
-
+        private string connectionString;
         public FormMain()
         {
-            usuarioActual = null;
-            rolActual = null;
+            connectionString="Data Source=192.168.20.37:1521/XEPDB1;User Id=admin;Password=oracle;";
+            usuarioActual = "";
+            rolActual = "";
             InitializeComponent();
+        }
+        //Base de datos conexion universal XD
+        public OracleConnection GetConnection()
+        {
+            return new OracleConnection(connectionString);
+        }
+        private async Task<bool> ProbarUsuarioAsync(string contrasenia, string usuario)
+        {
+            try
+            {
+                using (OracleConnection con = GetConnection())
+                {
+                    await con.OpenAsync();
+
+                    string sqlRol = @"SELECT USUROL 
+                              FROM USUARIO 
+                              WHERE USUNOMBRE = :usuario 
+                              AND USUCONTRASENA = :contrasena";
+
+                    using (OracleCommand cmd = new OracleCommand(sqlRol, con))
+                    {
+                        cmd.BindByName = true;
+                        cmd.Parameters.Add("usuario", OracleDbType.Varchar2).Value = usuario;
+                        cmd.Parameters.Add("contrasena", OracleDbType.Varchar2).Value = contrasenia;
+
+                        var rol = await cmd.ExecuteScalarAsync();
+
+                        if (rol == null || rol == DBNull.Value)
+                        {
+                            MessageBox.Show("Usuario o contraseña incorrectos");
+                            return false;
+                        }
+
+                        rolActual = rol.ToString();
+                    }
+
+                    string sqlId = @"SELECT IDPERSONA 
+                             FROM USUARIO 
+                             WHERE USUNOMBRE = :usuario 
+                             AND USUCONTRASENA = :contrasenia";
+
+                    using (OracleCommand cmd1 = new OracleCommand(sqlId, con))
+                    {
+                        cmd1.BindByName = true;
+                        cmd1.Parameters.Add("usuario", OracleDbType.Varchar2).Value = usuario;
+                        cmd1.Parameters.Add("contrasenia", OracleDbType.Varchar2).Value = contrasenia;
+
+                        var id = await cmd1.ExecuteScalarAsync();
+
+                        if (id != null && id != DBNull.Value)
+                        {
+                            personaActualId = Convert.ToInt32(id);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error interno: este usuario no tiene persona asociada.");
+                            return false;
+                        }
+                    }
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message);
+                return false;
+            }
         }
         private void cargarVista(UserControl vista)
         {
@@ -82,12 +153,22 @@ namespace Proyecto_Lab_BasesDeDatos
                 this.Hide();
             }
         }
-        //
-        //  Aqui se colocan cosas de la base de datos
-        //
-        public void SetUsuario(string rol, string usuario)
+        public async Task<bool> verificarUsuario(string contrasenia, string usuario)
         {
-            rolActual = rol;
+            bool esValido = await ProbarUsuarioAsync(contrasenia, usuario);
+
+            if (esValido)
+            {
+                SetUsuario(usuario);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public void SetUsuario(string usuario)
+        {
             usuarioActual = usuario;
             lblUsuario.Text = "Usuario: " + usuarioActual;
             VerificarRol();
@@ -106,7 +187,7 @@ namespace Proyecto_Lab_BasesDeDatos
 
             switch (rolActual)
             {
-                case "Admin":
+                case "admin":
                     btnView_Empleado.Visible = true;
                     btnView_EmpresaProveedora.Visible = true;
                     btnView_Mantenimiento.Visible = true;
@@ -117,23 +198,20 @@ namespace Proyecto_Lab_BasesDeDatos
                     btnView_Usuario_Membresia.Visible = true;
                     break;
 
-                case "Entrenador":
+                case "entrenador":
                     btnView_PlanEntrenamiento.Visible = true;
                     btnView_Rutina.Visible = true;
                     btnView_Maquina.Visible = true;
                     break;
 
-                case "Recepcionista":
+                case "empleado":
                     btnView_Usuario_Membresia.Visible = true;
                     btnView_Persona.Visible = true;
-                    break;
-
-                case "Mantenimiento":
                     btnView_Mantenimiento.Visible = true;
                     btnView_Maquina.Visible = true;
                     break;
 
-                case "Usuario":
+                case "cliente":
                     btnView_PlanEntrenamiento.Visible = true;
                     btnView_Rutina.Visible = true;
                     break;

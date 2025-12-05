@@ -30,9 +30,9 @@
         {
             lblTitulo = new Label();
             lblIdRutina = new Label();
-            txtIdRutina = new TextBox();
+            lblIdMRutina = new TextBox();
             lblIdPlan = new Label();
-            txtIdPlan = new TextBox();
+            lblIdMPlan = new TextBox();
             lblDiaSemana = new Label();
             cbDiaSemana = new ComboBox();
             lblDescripcion = new Label();
@@ -65,13 +65,13 @@
             lblIdRutina.TabIndex = 1;
             lblIdRutina.Text = "ID Rutina:";
             // 
-            // txtIdRutina
+            // lblIdMRutina
             // 
-            txtIdRutina.Font = new Font("Segoe UI", 10F);
-            txtIdRutina.Location = new Point(180, 68);
-            txtIdRutina.Name = "txtIdRutina";
-            txtIdRutina.Size = new Size(200, 25);
-            txtIdRutina.TabIndex = 2;
+            lblIdMRutina.Font = new Font("Segoe UI", 10F);
+            lblIdMRutina.Location = new Point(180, 68);
+            lblIdMRutina.Name = "lblIdMRutina";
+            lblIdMRutina.Size = new Size(200, 25);
+            lblIdMRutina.TabIndex = 2;
             // 
             // lblIdPlan
             // 
@@ -83,13 +83,13 @@
             lblIdPlan.TabIndex = 3;
             lblIdPlan.Text = "ID Plan Entrenamiento:";
             // 
-            // txtIdPlan
+            // lblIdMPlan
             // 
-            txtIdPlan.Font = new Font("Segoe UI", 10F);
-            txtIdPlan.Location = new Point(240, 113);
-            txtIdPlan.Name = "txtIdPlan";
-            txtIdPlan.Size = new Size(200, 25);
-            txtIdPlan.TabIndex = 4;
+            lblIdMPlan.Font = new Font("Segoe UI", 10F);
+            lblIdMPlan.Location = new Point(240, 113);
+            lblIdMPlan.Name = "lblIdMPlan";
+            lblIdMPlan.Size = new Size(200, 25);
+            lblIdMPlan.TabIndex = 4;
             // 
             // lblDiaSemana
             // 
@@ -197,9 +197,9 @@
             Controls.Add(lblDescripcion);
             Controls.Add(cbDiaSemana);
             Controls.Add(lblDiaSemana);
-            Controls.Add(txtIdPlan);
+            Controls.Add(lblIdMPlan);
             Controls.Add(lblIdPlan);
-            Controls.Add(txtIdRutina);
+            Controls.Add(lblIdMRutina);
             Controls.Add(lblIdRutina);
             Controls.Add(lblTitulo);
             Name = "View_Rutina";
@@ -213,9 +213,9 @@
         #endregion
         private Label lblTitulo;
         private Label lblIdRutina;
-        private TextBox txtIdRutina;
+        private TextBox lblIdMRutina;
         private Label lblIdPlan;
-        private TextBox txtIdPlan;
+        private TextBox lblIdMPlan;
         private Label lblDiaSemana;
         private ComboBox cbDiaSemana;
         private Label lblDescripcion;

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             lblTitulo = new Label();
-            txtId = new TextBox();
+            lblIdM = new TextBox();
             lblId = new Label();
             txtNombre = new TextBox();
             lblNombre = new Label();
@@ -56,14 +56,14 @@
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Gestión de Máquinas";
             // 
-            // txtId
+            // lblIdM
             // 
-            txtId.BorderStyle = BorderStyle.FixedSingle;
-            txtId.Location = new Point(25, 80);
-            txtId.Name = "txtId";
-            txtId.ReadOnly = true;
-            txtId.Size = new Size(120, 23);
-            txtId.TabIndex = 2;
+            lblIdM.BorderStyle = BorderStyle.FixedSingle;
+            lblIdM.Location = new Point(25, 80);
+            lblIdM.Name = "lblIdM";
+            lblIdM.ReadOnly = true;
+            lblIdM.Size = new Size(120, 23);
+            lblIdM.TabIndex = 2;
             // 
             // lblId
             // 
@@ -200,7 +200,7 @@
             Controls.Add(lblDescripcion);
             Controls.Add(txtNombre);
             Controls.Add(lblNombre);
-            Controls.Add(txtId);
+            Controls.Add(lblIdM);
             Controls.Add(lblId);
             Controls.Add(lblTitulo);
             Name = "View_Maquina";
@@ -212,7 +212,7 @@
 
         #endregion
         private Label lblTitulo;
-        private TextBox txtId;
+        private TextBox lblIdM;
         private Label lblId;
         private TextBox txtNombre;
         private Label lblNombre;

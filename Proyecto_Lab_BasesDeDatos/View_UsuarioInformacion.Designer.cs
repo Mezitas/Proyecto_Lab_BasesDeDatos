@@ -36,7 +36,7 @@
             lblGenero = new Label();
             lblDireccion = new Label();
             lblTelefono = new Label();
-            txtId = new TextBox();
+            lblIdM = new Label();
             txtNombre = new TextBox();
             txtFechaNacimiento = new TextBox();
             txtGenero = new TextBox();
@@ -115,14 +115,13 @@
             lblTelefono.TabIndex = 11;
             lblTelefono.Text = "Teléfono";
             // 
-            // txtId
+            // lblIdM
             // 
-            txtId.Font = new Font("Segoe UI", 11F);
-            txtId.Location = new Point(489, 86);
-            txtId.Name = "txtId";
-            txtId.ReadOnly = true;
-            txtId.Size = new Size(280, 27);
-            txtId.TabIndex = 2;
+            lblIdM.Font = new Font("Segoe UI", 11F);
+            lblIdM.Location = new Point(489, 86);
+            lblIdM.Name = "lblIdM";
+            lblIdM.Size = new Size(280, 27);
+            lblIdM.TabIndex = 2;
             // 
             // txtNombre
             // 
@@ -190,7 +189,7 @@
             Controls.Add(lblFechaNac);
             Controls.Add(txtNombre);
             Controls.Add(lblNombre);
-            Controls.Add(txtId);
+            Controls.Add(lblIdM);
             Controls.Add(lblId);
             Controls.Add(lblTitulo);
             Name = "View_UsuarioInformacion";
@@ -207,7 +206,7 @@
         private Label lblGenero;
         private Label lblDireccion;
         private Label lblTelefono;
-        private TextBox txtId;
+        private Label lblIdM;
         private TextBox txtNombre;
         private TextBox txtFechaNacimiento;
         private TextBox txtGenero;

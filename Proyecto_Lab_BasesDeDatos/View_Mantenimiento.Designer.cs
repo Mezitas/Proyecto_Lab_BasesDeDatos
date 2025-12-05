@@ -30,7 +30,7 @@
         {
             lblTitulo = new Label();
             lblId = new Label();
-            txtId = new TextBox();
+            lblIdM = new TextBox();
             lblMaquina = new Label();
             cmbMaquina = new ComboBox();
             lblFecha = new Label();
@@ -71,14 +71,14 @@
             lblId.TabIndex = 1;
             lblId.Text = "ID Mantenimiento";
             // 
-            // txtId
+            // lblIdM
             // 
-            txtId.BorderStyle = BorderStyle.FixedSingle;
-            txtId.Location = new Point(25, 80);
-            txtId.Name = "txtId";
-            txtId.ReadOnly = true;
-            txtId.Size = new Size(120, 23);
-            txtId.TabIndex = 2;
+            lblIdM.BorderStyle = BorderStyle.FixedSingle;
+            lblIdM.Location = new Point(25, 80);
+            lblIdM.Name = "lblIdM";
+            lblIdM.ReadOnly = true;
+            lblIdM.Size = new Size(120, 23);
+            lblIdM.TabIndex = 2;
             // 
             // lblMaquina
             // 
@@ -269,7 +269,7 @@
             Controls.Add(lblFecha);
             Controls.Add(cmbMaquina);
             Controls.Add(lblMaquina);
-            Controls.Add(txtId);
+            Controls.Add(lblIdM);
             Controls.Add(lblId);
             Controls.Add(lblTitulo);
             Name = "View_Mantenimiento";
@@ -282,7 +282,7 @@
         #endregion
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox lblIdM;
         private System.Windows.Forms.Label lblMaquina;
         private System.Windows.Forms.ComboBox cmbMaquina;
         private System.Windows.Forms.Label lblFecha;

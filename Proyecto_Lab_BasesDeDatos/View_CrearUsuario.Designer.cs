@@ -138,7 +138,7 @@
             // cb_CrearUsuario_Rol
             // 
             cb_CrearUsuario_Rol.DropDownStyle = ComboBoxStyle.DropDownList;
-            cb_CrearUsuario_Rol.Items.AddRange(new object[] { "Administrador", "Técnico", "Entrenador", "Conserje" });
+            cb_CrearUsuario_Rol.Items.AddRange(new object[] { "Administrador", "Empleado", "Entrenador", "Cliente" });
             cb_CrearUsuario_Rol.Location = new Point(527, 412);
             cb_CrearUsuario_Rol.Name = "cb_CrearUsuario_Rol";
             cb_CrearUsuario_Rol.Size = new Size(220, 23);
