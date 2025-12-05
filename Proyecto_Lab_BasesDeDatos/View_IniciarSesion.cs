@@ -18,10 +18,43 @@ namespace Proyecto_Lab_BasesDeDatos
         }
         public void btn_IniciarSesion_Click(object sender, EventArgs e)
         {
-            FormMain main = new FormMain();
-            this.FindForm().Hide();
-            main.Show();
-            main.SetUsuario("Admin");
+            string usuario = txt_IniciarSesion_Usuario.Text;
+            string contrasenia = txt_IniciarSesion_Contrasenia.Text;
+            if (txt_IniciarSesion_Usuario.Text=="")
+            {
+                DialogResult advertencia = MessageBox.Show(
+                    "¡Advertencia! Necesitas ingresar un usuario",
+                    "Campos incompletos",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+            }else if(txt_IniciarSesion_Contrasenia.Text == "")
+            {
+                DialogResult advertencia = MessageBox.Show(
+                    "¡Advertencia! Necesitas ingresar una contraseña",
+                    "Campos incompletos",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+            }
+            else
+            { 
+                FormMain main = new FormMain();
+                //Problema de FormMain minimizandose por el FindForm().Hide();
+                main.Show();
+                FindForm().Hide();
+                //
+                //  Aqui se colocan cosas de la base de datos
+                //
+                main.SetUsuario("Admin", usuario);
+                main.Show();
+            }
+                
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -16,5 +16,8 @@ namespace Proyecto_Lab_BasesDeDatos
         {
             InitializeComponent();
         }
+        //
+        //  Aqui se colocan cosas de la base de datos
+        //
     }
 }

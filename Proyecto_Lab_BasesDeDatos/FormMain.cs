@@ -4,8 +4,13 @@ namespace Proyecto_Lab_BasesDeDatos
 {
     public partial class FormMain : Form
     {
+        private string usuarioActual;
+        private string rolActual;
+
         public FormMain()
         {
+            usuarioActual = null;
+            rolActual = null;
             InitializeComponent();
         }
         private void cargarVista(UserControl vista)
@@ -54,6 +59,13 @@ namespace Proyecto_Lab_BasesDeDatos
         {
             cargarVista(new View_Usuario_Membresia());
         }
+        private void lblUsuario_Click(object sender, EventArgs e)
+        {
+            cargarVista(new View_UsuarioInformacion());
+        }
+        //
+        //  Aqui se colocan cosas de la base de datos
+        //
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             DialogResult respuesta = MessageBox.Show(
@@ -70,9 +82,63 @@ namespace Proyecto_Lab_BasesDeDatos
                 this.Hide();
             }
         }
-        public void SetUsuario(string nombre)
+        //
+        //  Aqui se colocan cosas de la base de datos
+        //
+        public void SetUsuario(string rol, string usuario)
         {
-            lblUsuario.Text = "Usuario: " + nombre;
+            rolActual = rol;
+            usuarioActual = usuario;
+            lblUsuario.Text = "Usuario: " + usuarioActual;
+            VerificarRol();
         }
+        private void VerificarRol()
+        {
+            
+            btnView_Empleado.Visible = false;
+            btnView_EmpresaProveedora.Visible = false;
+            btnView_Mantenimiento.Visible = false;
+            btnView_Maquina.Visible = false;
+            btnView_Persona.Visible = false;
+            btnView_PlanEntrenamiento.Visible = false;
+            btnView_Rutina.Visible = false;
+            btnView_Usuario_Membresia.Visible = false;
+
+            switch (rolActual)
+            {
+                case "Admin":
+                    btnView_Empleado.Visible = true;
+                    btnView_EmpresaProveedora.Visible = true;
+                    btnView_Mantenimiento.Visible = true;
+                    btnView_Maquina.Visible = true;
+                    btnView_Persona.Visible = true;
+                    btnView_PlanEntrenamiento.Visible = true;
+                    btnView_Rutina.Visible = true;
+                    btnView_Usuario_Membresia.Visible = true;
+                    break;
+
+                case "Entrenador":
+                    btnView_PlanEntrenamiento.Visible = true;
+                    btnView_Rutina.Visible = true;
+                    btnView_Maquina.Visible = true;
+                    break;
+
+                case "Recepcionista":
+                    btnView_Usuario_Membresia.Visible = true;
+                    btnView_Persona.Visible = true;
+                    break;
+
+                case "Mantenimiento":
+                    btnView_Mantenimiento.Visible = true;
+                    btnView_Maquina.Visible = true;
+                    break;
+
+                case "Usuario":
+                    btnView_PlanEntrenamiento.Visible = true;
+                    btnView_Rutina.Visible = true;
+                    break;
+            }
+        }
+
     }
 }

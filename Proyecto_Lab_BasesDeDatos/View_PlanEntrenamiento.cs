@@ -16,5 +16,25 @@ namespace Proyecto_Lab_BasesDeDatos
         {
             InitializeComponent();
         }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

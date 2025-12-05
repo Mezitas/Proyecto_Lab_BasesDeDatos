@@ -41,12 +41,13 @@
             lbl_CrearUsuario_Rol = new Label();
             cb_CrearUsuario_Rol = new ComboBox();
             btn_CrearUsuario = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // lbl_CrearUsuario_Usuario
             // 
             lbl_CrearUsuario_Usuario.AutoSize = true;
-            lbl_CrearUsuario_Usuario.Location = new Point(387, 55);
+            lbl_CrearUsuario_Usuario.Location = new Point(387, 165);
             lbl_CrearUsuario_Usuario.Name = "lbl_CrearUsuario_Usuario";
             lbl_CrearUsuario_Usuario.Size = new Size(47, 15);
             lbl_CrearUsuario_Usuario.TabIndex = 0;
@@ -54,7 +55,7 @@
             // 
             // txt_CrearUsuario_Usuario
             // 
-            txt_CrearUsuario_Usuario.Location = new Point(527, 52);
+            txt_CrearUsuario_Usuario.Location = new Point(527, 162);
             txt_CrearUsuario_Usuario.Name = "txt_CrearUsuario_Usuario";
             txt_CrearUsuario_Usuario.Size = new Size(220, 23);
             txt_CrearUsuario_Usuario.TabIndex = 1;
@@ -62,7 +63,7 @@
             // lbl_CrearUsuario_Contrasenia
             // 
             lbl_CrearUsuario_Contrasenia.AutoSize = true;
-            lbl_CrearUsuario_Contrasenia.Location = new Point(387, 105);
+            lbl_CrearUsuario_Contrasenia.Location = new Point(387, 215);
             lbl_CrearUsuario_Contrasenia.Name = "lbl_CrearUsuario_Contrasenia";
             lbl_CrearUsuario_Contrasenia.Size = new Size(67, 15);
             lbl_CrearUsuario_Contrasenia.TabIndex = 2;
@@ -70,7 +71,7 @@
             // 
             // txt_CrearUsuario_Contrasenia
             // 
-            txt_CrearUsuario_Contrasenia.Location = new Point(527, 102);
+            txt_CrearUsuario_Contrasenia.Location = new Point(527, 212);
             txt_CrearUsuario_Contrasenia.Name = "txt_CrearUsuario_Contrasenia";
             txt_CrearUsuario_Contrasenia.PasswordChar = '*';
             txt_CrearUsuario_Contrasenia.Size = new Size(220, 23);
@@ -79,7 +80,7 @@
             // lbl_CrearUsuario_Confirmar
             // 
             lbl_CrearUsuario_Confirmar.AutoSize = true;
-            lbl_CrearUsuario_Confirmar.Location = new Point(387, 155);
+            lbl_CrearUsuario_Confirmar.Location = new Point(387, 265);
             lbl_CrearUsuario_Confirmar.Name = "lbl_CrearUsuario_Confirmar";
             lbl_CrearUsuario_Confirmar.Size = new Size(124, 15);
             lbl_CrearUsuario_Confirmar.TabIndex = 4;
@@ -87,7 +88,7 @@
             // 
             // txt_CrearUsuario_Confirmar
             // 
-            txt_CrearUsuario_Confirmar.Location = new Point(527, 152);
+            txt_CrearUsuario_Confirmar.Location = new Point(527, 262);
             txt_CrearUsuario_Confirmar.Name = "txt_CrearUsuario_Confirmar";
             txt_CrearUsuario_Confirmar.PasswordChar = '*';
             txt_CrearUsuario_Confirmar.Size = new Size(220, 23);
@@ -96,7 +97,7 @@
             // lbl_CrearUsuario_Nombre
             // 
             lbl_CrearUsuario_Nombre.AutoSize = true;
-            lbl_CrearUsuario_Nombre.Location = new Point(387, 205);
+            lbl_CrearUsuario_Nombre.Location = new Point(387, 315);
             lbl_CrearUsuario_Nombre.Name = "lbl_CrearUsuario_Nombre";
             lbl_CrearUsuario_Nombre.Size = new Size(107, 15);
             lbl_CrearUsuario_Nombre.TabIndex = 6;
@@ -104,7 +105,7 @@
             // 
             // txt_CrearUsuario_Nombre
             // 
-            txt_CrearUsuario_Nombre.Location = new Point(527, 202);
+            txt_CrearUsuario_Nombre.Location = new Point(527, 312);
             txt_CrearUsuario_Nombre.Name = "txt_CrearUsuario_Nombre";
             txt_CrearUsuario_Nombre.Size = new Size(220, 23);
             txt_CrearUsuario_Nombre.TabIndex = 7;
@@ -112,7 +113,7 @@
             // lbl_CrearUsuario_Telefono
             // 
             lbl_CrearUsuario_Telefono.AutoSize = true;
-            lbl_CrearUsuario_Telefono.Location = new Point(387, 255);
+            lbl_CrearUsuario_Telefono.Location = new Point(387, 365);
             lbl_CrearUsuario_Telefono.Name = "lbl_CrearUsuario_Telefono";
             lbl_CrearUsuario_Telefono.Size = new Size(53, 15);
             lbl_CrearUsuario_Telefono.TabIndex = 8;
@@ -120,7 +121,7 @@
             // 
             // txt_CrearUsuario_Telefono
             // 
-            txt_CrearUsuario_Telefono.Location = new Point(527, 252);
+            txt_CrearUsuario_Telefono.Location = new Point(527, 362);
             txt_CrearUsuario_Telefono.Name = "txt_CrearUsuario_Telefono";
             txt_CrearUsuario_Telefono.Size = new Size(220, 23);
             txt_CrearUsuario_Telefono.TabIndex = 9;
@@ -128,7 +129,7 @@
             // lbl_CrearUsuario_Rol
             // 
             lbl_CrearUsuario_Rol.AutoSize = true;
-            lbl_CrearUsuario_Rol.Location = new Point(387, 305);
+            lbl_CrearUsuario_Rol.Location = new Point(387, 415);
             lbl_CrearUsuario_Rol.Name = "lbl_CrearUsuario_Rol";
             lbl_CrearUsuario_Rol.Size = new Size(24, 15);
             lbl_CrearUsuario_Rol.TabIndex = 10;
@@ -138,23 +139,38 @@
             // 
             cb_CrearUsuario_Rol.DropDownStyle = ComboBoxStyle.DropDownList;
             cb_CrearUsuario_Rol.Items.AddRange(new object[] { "Administrador", "Técnico", "Entrenador", "Conserje" });
-            cb_CrearUsuario_Rol.Location = new Point(527, 302);
+            cb_CrearUsuario_Rol.Location = new Point(527, 412);
             cb_CrearUsuario_Rol.Name = "cb_CrearUsuario_Rol";
             cb_CrearUsuario_Rol.Size = new Size(220, 23);
             cb_CrearUsuario_Rol.TabIndex = 11;
             // 
             // btn_CrearUsuario
             // 
-            btn_CrearUsuario.Location = new Point(527, 355);
+            btn_CrearUsuario.BackColor = SystemColors.Control;
+            btn_CrearUsuario.Location = new Point(527, 465);
             btn_CrearUsuario.Name = "btn_CrearUsuario";
             btn_CrearUsuario.Size = new Size(220, 35);
             btn_CrearUsuario.TabIndex = 12;
             btn_CrearUsuario.Text = "Crear Usuario";
+            btn_CrearUsuario.UseVisualStyleBackColor = false;
+            btn_CrearUsuario.Click += btn_CrearUsuario_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Tahoma", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(438, 51);
+            label1.Name = "label1";
+            label1.Size = new Size(271, 45);
+            label1.TabIndex = 13;
+            label1.Text = "Crear usuario";
             // 
             // View_CrearUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.RosyBrown;
+            Controls.Add(label1);
             Controls.Add(lbl_CrearUsuario_Usuario);
             Controls.Add(txt_CrearUsuario_Usuario);
             Controls.Add(lbl_CrearUsuario_Contrasenia);
@@ -190,5 +206,6 @@
         private Label lbl_CrearUsuario_Rol;
         private ComboBox cb_CrearUsuario_Rol;
         private Button btn_CrearUsuario;
+        private Label label1;
     }
 }

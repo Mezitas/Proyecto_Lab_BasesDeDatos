@@ -39,8 +39,8 @@
             btnView_Rutina = new Button();
             btnView_Usuario_Membresia = new Button();
             panelUsuario = new Panel();
+            lblUsuario = new LinkLabel();
             btnCerrarSesion = new Button();
-            lblUsuario = new Label();
             panelMenu.SuspendLayout();
             panelUsuario.SuspendLayout();
             SuspendLayout();
@@ -70,16 +70,6 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(288, 650);
             panelMenu.TabIndex = 0;
-            // 
-            // panelUsuario
-            // 
-            panelUsuario.BackColor = Color.Thistle;
-            panelUsuario.Controls.Add(lblUsuario);
-            panelUsuario.Controls.Add(btnCerrarSesion);
-            panelUsuario.Location = new Point(12, 12);
-            panelUsuario.Name = "panelUsuario";
-            panelUsuario.Size = new Size(1256, 40);
-            panelUsuario.TabIndex = 1;
             // 
             // btnView_Empleado
             // 
@@ -160,7 +150,30 @@
             btnView_Usuario_Membresia.TabIndex = 7;
             btnView_Usuario_Membresia.Text = "Usuario - Membresía";
             btnView_Usuario_Membresia.Click += BtnView_Usuario_Membresia_Click;
-            
+            // 
+            // panelUsuario
+            // 
+            panelUsuario.BackColor = Color.Thistle;
+            panelUsuario.Controls.Add(lblUsuario);
+            panelUsuario.Controls.Add(btnCerrarSesion);
+            panelUsuario.Location = new Point(12, 12);
+            panelUsuario.Name = "panelUsuario";
+            panelUsuario.Size = new Size(1256, 40);
+            panelUsuario.TabIndex = 1;
+            // 
+            // lblUsuario
+            // 
+            lblUsuario.Cursor = Cursors.Hand;
+            lblUsuario.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblUsuario.LinkColor = SystemColors.ActiveCaptionText;
+            lblUsuario.Location = new Point(15, 10);
+            lblUsuario.Name = "lblUsuario";
+            lblUsuario.Size = new Size(400, 25);
+            lblUsuario.TabIndex = 1;
+            lblUsuario.TabStop = true;
+            lblUsuario.Text = "Usuario: ";
+            lblUsuario.VisitedLinkColor = SystemColors.ActiveCaptionText;
+            lblUsuario.Click += lblUsuario_Click;
             // 
             // btnCerrarSesion
             // 
@@ -174,15 +187,6 @@
             btnCerrarSesion.Text = "Cerrar Sesión";
             btnCerrarSesion.UseVisualStyleBackColor = false;
             btnCerrarSesion.Click += btnCerrarSesion_Click;
-            // 
-            // lblUsuario
-            // 
-            lblUsuario.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblUsuario.Location = new Point(15, 10);
-            lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new Size(400, 25);
-            lblUsuario.TabIndex = 1;
-            lblUsuario.Text = "Usuario: (sin iniciar sesión)";
             // 
             // FormMain
             // 
@@ -198,7 +202,6 @@
             panelMenu.ResumeLayout(false);
             panelUsuario.ResumeLayout(false);
             ResumeLayout(false);
-
         }
 
         #endregion
@@ -215,9 +218,7 @@
         private Button btnView_PlanEntrenamiento;
         private Button btnView_Rutina;
         private Button btnView_Usuario_Membresia;
-
-        //botones y texto panelUsuario
-        private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Button btnCerrarSesion;
+        private LinkLabel lblUsuario;
     }
 }

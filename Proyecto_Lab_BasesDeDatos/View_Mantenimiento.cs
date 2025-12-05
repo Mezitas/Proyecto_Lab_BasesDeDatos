@@ -16,5 +16,25 @@ namespace Proyecto_Lab_BasesDeDatos
         {
             InitializeComponent();
         }
+
+        private void dgvMantenimientos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

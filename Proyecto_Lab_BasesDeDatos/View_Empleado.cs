@@ -16,7 +16,9 @@ namespace Proyecto_Lab_BasesDeDatos
         {
             InitializeComponent();
         }
-
+        //
+        //  Aqui se colocan cosas de la base de datos
+        //
         private void label1_Click(object sender, EventArgs e)
         {
 

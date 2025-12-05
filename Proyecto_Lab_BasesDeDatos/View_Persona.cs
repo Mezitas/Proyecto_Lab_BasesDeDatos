@@ -16,5 +16,10 @@ namespace Proyecto_Lab_BasesDeDatos
         {
             InitializeComponent();
         }
+
+        private void btnPersona_Guardar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

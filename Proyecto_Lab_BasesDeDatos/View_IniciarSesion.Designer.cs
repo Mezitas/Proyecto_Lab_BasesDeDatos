@@ -35,6 +35,7 @@
             lbl_IniciarSesion_Contrasenia = new Label();
             txt_IniciarSesion_Contrasenia = new TextBox();
             btn_IniciarSesion = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // lbl_IniciarSesion_Usuario
@@ -80,11 +81,23 @@
             btn_IniciarSesion.UseVisualStyleBackColor = true;
             btn_IniciarSesion.Click += btn_IniciarSesion_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Tahoma", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(474, 49);
+            label1.Name = "label1";
+            label1.Size = new Size(275, 45);
+            label1.TabIndex = 14;
+            label1.Text = "Iniciar Sesion";
+            label1.Click += label1_Click;
+            // 
             // View_IniciarSesion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RosyBrown;
+            Controls.Add(label1);
             Controls.Add(lbl_IniciarSesion_Usuario);
             Controls.Add(txt_IniciarSesion_Usuario);
             Controls.Add(lbl_IniciarSesion_Contrasenia);
@@ -101,5 +114,6 @@
         private Label lbl_IniciarSesion_Contrasenia;
         private TextBox txt_IniciarSesion_Contrasenia;
         private Button btn_IniciarSesion;
+        private Label label1;
     }
 }
